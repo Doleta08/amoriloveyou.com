@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+	font-size: 62.5%;
+
+	--text-size: normal 400 1.6rem/2rem 'Poppins', sans-serif;
+	--green: #55d13c;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-size: 1.6rem;
+	font: var(--text-size);
+
+	overflow-x: hidden;
+}
+
+main {
+	width: 100%;
+	min-height: 100vh;
+	background: rgba(0, 0, 0, 0.7) url(./src/images/bg1.jpg) no-repeat center;
+	background-size: cover;
+	background-blend-mode: multiply;
+}
+
+.main-overlay {
+	color: #fff;
+	width: 100%;
+	height: 100vh;
+
+	display: grid;
+	place-content: center;
+	text-align: center;
+}
+
+.main-overlay .content {
+	padding: 4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	backdrop-filter: blur(7px);
+	box-shadow: 5px 15px 50px rgba(0, 0, 0, 0.4);
+	border-radius: 12px;
+}
+
+.main-overlay .content h1 {
+	font-size: clamp(3rem, 10vw, 7rem);
+	line-height: 120%;
+	color: #f92727;
+	filter: drop-shadow(0px 0px 10px #d60000);
+}
+
+.content h2:last-child {
+	margin-top: 2rem;
+	font-size: 3rem;
+}
+
+footer {
+	background-image: url(../src/images/bg-footer.png);
+}
+
+footer .inner {
+	width: 85%;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.inner .first-content {
+	padding: 1rem 0;
+	font-size: 1.2rem;
+	color: rgb(124, 124, 124);
+}
+.second-content {
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 2rem 0;
+}
+
+.inner-second a {
+	color: #fff;
+}
+
+.inner-second {
+	width: 85%;
+	margin: 0 auto;
+	color: rgb(180, 180, 180);
+	font-size: 1.4rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

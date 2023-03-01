@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" href="style-congrats.css" />
+	<meta name="description" content="Conquiste a sua Ex com esse método infalível" />
+
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+	<script>
+		function parseQuery(qstr) {
+			var query = {}
+			var a = (qstr[0] === '?' ? qstr.substr(1) : qstr).split('&')
+			for (var i = 0; i < a.length; i++) {
+				var b = a[i].split('=')
+				query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '')
+			}
+			return query
+		}
+
+		function encodeQuery(obj) {
+			var str = []
+			for (var p in obj)
+				if (obj.hasOwnProperty(p)) {
+					str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]))
+				}
+			return str.join('&')
+		}
+
+		function addQueryParameterToDomain(key, value) {
+			var links = document.querySelectorAll('a[href]'),
+				linksLength = links.length,
+				index,
+				queryIndex,
+				queryString,
+				query,
+				url,
+				domain,
+				colonSlashSlash
+
+			for (index = 0; index < linksLength; ++index) {
+				; (url = links[index].href),
+					(queryIndex = url.indexOf('?')),
+					(colonSlashSlash = url.indexOf('://'))
+
+				domain = url.substring(colonSlashSlash + 3)
+				domain = domain.substring(0, domain.indexOf('/'))
+
+				if (queryIndex === -1) {
+					url += '?' + key + '=' + value
+				} else {
+					queryString = url.substring(queryIndex)
+					url = url.substring(0, queryIndex)
+					query = parseQuery(queryString)
+
+					query[key] = value
+
+					url += '?' + encodeQuery(query)
+				}
+
+				links[index].href = url
+			}
+		}
+
+		function addQuery(item) {
+			var arr = item.split('=')
+			if (arr[0] != null && arr[1] != undefined) {
+				addQueryParameterToDomain(arr[0], arr[1])
+			}
+		}
+
+		jQuery(function () {
+			var url = window.location.search.replace('?', '')
+			var itens = url.split('&')
+			itens.forEach(addQuery)
+		})
+	</script>
+
+	<!-- Meta Pixel Code -->
+	<script>
+		!function (f, b, e, v, n, t, s) {
+			if (f.fbq) return; n = f.fbq = function () {
+				n.callMethod ?
+				n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+			n.queue = []; t = b.createElement(e); t.async = !0;
+			t.src = v; s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '643731880847246');
+		fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=643731880847246&ev=PageView&noscript=1" /></noscript>
+	<!-- End Meta Pixel Code -->
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9MEDRVZDN6"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-9MEDRVZDN6');
+	</script>
+
+	<title>Lover Fector</title>
+</head>
+
+<body>
+	<main class="congrats">
+		<div class="main-overlay">
+			<div class="content">
+				<h1>Congratulations!</h1>
+				<h3>
+					You just got your access to the training. I can assure you that you
+					will achieve your goal!
+				</h3>
+				<h2>Check your e-mail for access data.</h2>
+				<h2><u>I'm waiting for you!</u></h2>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="inner">
+			<!-- 				<div class="first-content">
+					<p>
+						ClickBank® is the retailer of products on this site. CLICKBANK ® is
+						a registered trademark of Click Sales, Inc., a Delaware corporation
+						located at 917 S. Lusk Street, Suite 200, Boise Idaho, 83706, USA
+						and used by permission. ClickBank's role as retailer does not
+						constitute an endorsement, approval or review of these products or
+						any claim, statement or opinion used in promotion of these products.
+					</p>
+				</div> -->
+		</div>
+		<div class="second-content">
+			<div class="inner-second">
+				<div class="privacity">
+					<a href="#">Terms of use</a>
+					<a href="#">Privacy Policy</a>
+				</div>
+				<div class="copywriting">
+					<p>© 2023 LOVELEARNINGS MEDIA INC.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>
