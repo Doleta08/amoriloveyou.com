@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+	<link rel="manifest" href="img/site.webmanifest">
+
+	<link rel="stylesheet" href="style.css" />
+	<meta name="description" content="Conquiste a sua Ex com esse método infalível" />
+
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+	<script>
+		function parseQuery(qstr) {
+			var query = {}
+			var a = (qstr[0] === '?' ? qstr.substr(1) : qstr).split('&')
+			for (var i = 0; i < a.length; i++) {
+				var b = a[i].split('=')
+				query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '')
+			}
+			return query
+		}
+
+		function encodeQuery(obj) {
+			var str = []
+			for (var p in obj)
+				if (obj.hasOwnProperty(p)) {
+					str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]))
+				}
+			return str.join('&')
+		}
+
+		function addQueryParameterToDomain(key, value) {
+			var links = document.querySelectorAll('a[href]'),
+				linksLength = links.length,
+				index,
+				queryIndex,
+				queryString,
+				query,
+				url,
+				domain,
+				colonSlashSlash
+
+			for (index = 0; index < linksLength; ++index) {
+				; (url = links[index].href),
+					(queryIndex = url.indexOf('?')),
+					(colonSlashSlash = url.indexOf('://'))
+
+				domain = url.substring(colonSlashSlash + 3)
+				domain = domain.substring(0, domain.indexOf('/'))
+
+				if (queryIndex === -1) {
+					url += '?' + key + '=' + value
+				} else {
+					queryString = url.substring(queryIndex)
+					url = url.substring(0, queryIndex)
+					query = parseQuery(queryString)
+
+					query[key] = value
+
+					url += '?' + encodeQuery(query)
+				}
+
+				links[index].href = url
+			}
+		}
+
+		function addQuery(item) {
+			var arr = item.split('=')
+			if (arr[0] != null && arr[1] != undefined) {
+				addQueryParameterToDomain(arr[0], arr[1])
+			}
+		}
+
+		jQuery(function () {
+			var url = window.location.search.replace('?', '')
+			var itens = url.split('&')
+			itens.forEach(addQuery)
+		})
+	</script>
+
+	<!-- Meta Pixel Code -->
+	<script>
+		!function (f, b, e, v, n, t, s) {
+			if (f.fbq) return; n = f.fbq = function () {
+				n.callMethod ?
+					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+			n.queue = []; t = b.createElement(e); t.async = !0;
+			t.src = v; s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '643731880847246');
+		fbq('track', 'PageView');
+		fbq('track', 'ViewContent');
+		fbq('track', 'Lead');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=643731880847246&ev=PageView&noscript=1" /></noscript>
+	<!-- End Meta Pixel Code -->
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9MEDRVZDN6"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-9MEDRVZDN6');
+	</script>
+
+	<script src="./script.js" defer></script>
+	<title>The Ex Factor</title>
+</head>
+
+<body>
+	<header>
+		<div class="overlay">
+
+			<img class="img_headline" src="./src/images/1.png" alt="Headline" />
+
+			<div class="area_home">
+
+				<div class="area_player">
+					<div class="up_container">
+						<div class="player-wrapper">
+							<video class="player" width="100%" height="auto" poster="img/maxresdefault.jpg" autoplay
+								preload="auto" controls loop muted playsinline>
+								<source src="https://carlosxavier.dev.br/videos/LoveFector.mp4" type="video/mp4">
+								</source>
+							</video>
+
+							<script>
+
+								var player = document.querySelector('.player');
+								player.pause();
+								player.controls = false;
+								function playClick() {
+
+									player.volume = 1;
+									player.muted = false;
+									player.currentTime = 0;
+									player.controls = false;
+
+									player.play();
+									document.querySelector(".thumb_1").style.display = "none";
+
+								}
+
+
+								function pauseClick() {
+									player.pause();
+									document.querySelector(".thumb_2").style.display = "flex";
+								}
+
+								function returnVideo() {
+									player.play();
+									document.querySelector(".thumb_2").style.display = "none";
+								}
+
+							</script>
+							<!--18 minutos para aparecer-->
+							<script
+								src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+							<div class="thumb_1" onclick="playClick()">
+								<lottie-player
+									src="https://lottie.host/7b6800a5-f6bf-49c6-85c0-78750531f007/dH5X6yOzmA.json"
+									background="transparent" speed="1" style="width: 200px; height: 200px;" loop
+									autoplay></lottie-player>
+
+							</div>
+
+							<div class="thumb_2" onclick="returnVideo()">
+								<lottie-player
+									src="https://lottie.host/7b6800a5-f6bf-49c6-85c0-78750531f007/dH5X6yOzmA.json"
+									background="transparent" speed="1" style="width: 200px; height: 200px;" loop
+									autoplay></lottie-player>
+
+							</div>
+
+							<div class="glass" onclick="pauseClick()"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<p>🔊 MAKE SURE YOUR SOUND IS ON</p>
+
+		</div>
+	</header>
+
+	<div class="main-content hide">
+		<section id="first-offer">
+			<div class="overlay">
+				<h2>ONE-TIME OFFER</h2>
+				<h4><s>Total Value: $344.90</s></h4>
+
+				<h2>You Pay Only: <span class="price">$47</span></h2>
+				<h3>or 2X from $24.68</h3>
+
+				<a href="checkout sim">
+					<img class="button" src="./src/images/5.png" alt="Purchase Button" />
+
+					<h2 style="color: var(--green); margin-top: 1.6rem">
+						"Yes! Add to Cart!"
+					</h2>
+				</a>
+				<img class="books" src="./src/images/package.png" alt="Purchase Button" />
+			</div>
+		</section>
+
+		<section id="banner">
+			<img src="./src/images/3.png" alt="The ExFactor" />
+		</section>
+
+		<section id="testimonial">
+			<div class="title_testimonial">
+				<h1>Client Testimonial</h1>
+			</div>
+
+
+			<div class="area_client">
+
+				<div class="area_player_2">
+					<div class="up_container">
+						<div class="player-wrapper">
+							<video class="player_2" width="100%" height="auto" autoplay preload="auto" controls loop
+								muted playsinline>
+								<source src="https://carlosxavier.dev.br/videos/LoveFector_2.mp4" type="video/mp4">
+								</source>
+							</video>
+
+							<script>
+
+								var player_2 = document.querySelector('.player_2');
+								player_2.pause();
+								player_2.controls = false;
+								function playClick_client() {
+
+									player_2.volume = 1;
+									player_2.muted = false;
+									player_2.currentTime = 0;
+									player_2.controls = false;
+
+									player_2.play();
+									document.querySelector(".thumb_1_client").style.display = "none";
+
+								}
+
+
+								function pauseClick_client() {
+									player_2.pause();
+									document.querySelector(".thumb_2_client").style.display = "flex";
+								}
+
+								function returnVideo_client() {
+									player_2.play();
+									document.querySelector(".thumb_2_client").style.display = "none";
+								}
+
+							</script>
+
+							<script
+								src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+							<div class="thumb_1_client" onclick="playClick_client()">
+								<lottie-player
+									src="https://lottie.host/7b6800a5-f6bf-49c6-85c0-78750531f007/dH5X6yOzmA.json"
+									background="transparent" speed="1" style="width: 200px; height: 200px;" loop
+									autoplay></lottie-player>
+
+							</div>
+
+							<div class="thumb_2_client" onclick="returnVideo_client()">
+								<lottie-player
+									src="https://lottie.host/7b6800a5-f6bf-49c6-85c0-78750531f007/dH5X6yOzmA.json"
+									background="transparent" speed="1" style="width: 200px; height: 200px;" loop
+									autoplay></lottie-player>
+
+							</div>
+
+							<div class="glass" onclick="pauseClick_client()"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+			<!--<div class="video-box">
+					<iframe
+						src="https://www.youtube.com/embed/D_W5YtnPBKU"
+						title="YouTube video player"
+						frameborder="0"
+						allowfullscreen></iframe>
+				</div>-->
+
+			<div class="testimonial-boxes">
+				<div class="box">
+					<img src="./src/images/9.png" alt="" />
+				</div>
+				<div class="box">
+					<img src="./src/images/10.png" alt="" />
+				</div>
+				<div class="box">
+					<img src="./src/images/11.png" alt="" />
+				</div>
+			</div>
+
+			<div class="second-offer">
+				<h2 class="yellow">ONE-TIME OFFER</h2>
+				<h4><s>Total Value: $344.90</s></h4>
+
+				<h2>You Pay Only: <span class="price">$47</span></h2>
+				<h3>or 2X from $24.68</h3>
+				<a href="chekout sim">
+					<img class="button" src="./src/images/5.png" alt="Purchase Button" />
+					<h2 style="color: var(--green); margin-top: 1.6rem">
+						"Yes! Add to Cart!"
+					</h2>
+				</a>
+				<img class="books" src="./src/images/6.png" alt="Purchase Button" />
+
+				<div class="guarante-security">
+					<div>
+						<img src="./src/images/15.png" alt="" />
+					</div>
+					<div>
+						<img src="./src/images/16.png" alt="" />
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<footer>
+		<section id="author">
+			<div class="image-box">
+				<img src="./src/images/autor.jpg" alt="Author image" />
+			</div>
+			<div class="info">
+				<h2>BRAD BROWNING - BREAKUP & DIVORCE COACH</h2>
+				<p>
+					Welcome! l'm Brad Browning, a marriage & relationship coach with a
+					passion for helping couples fix their broken relationships. Ifyou're
+					looking for guidance or advice on how to win back your ex, get
+					through a difficult breakup, or rescue a dying marriage, then you're
+					in the right place.
+				</p>
+
+				<div class="policy-privacity">
+					<a href="#">Terms of use</a>
+					<a href="#">Privacy Policy</a>
+				</div>
+			</div>
+		</section>
+	</footer>
+</body>
+
+</html>
